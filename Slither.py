@@ -29,6 +29,11 @@ while not gameExit:
             if event.key == pygame.K_RIGHT:
                 leadXChange = 5
 
+        if event.type == pygame.KEYUP:
+            if event.key == pygame.K_LEFT or event.key == pygame.K_RIGHT:
+                leadXChange = 0
+
+
     leadX += leadXChange
     gameDisplay.fill(white)
     pygame.draw.rect(gameDisplay, black, [leadX, leadY, 10, 10])
